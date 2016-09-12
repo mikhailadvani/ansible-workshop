@@ -4,7 +4,8 @@ Vagrant.configure("2") do |config|
   # config.vm.box_url = "../CentOS-6.box"
   config.vm.box_url = "http://cloud.centos.org/centos/6/vagrant/x86_64/images/CentOS-6.box"
   vagrant_folder = "/vagrant/playbooks"
-  config.vm.synced_folder "../ansible/playbooks", vagrant_folder, :nfs => true
+  config.vm.synced_folder "./playbooks", vagrant_folder, :nfs => true
+  config.vm.synced_folder ".", "/opt/ansible" , :nfs => true
   config.vm.network :private_network, ip: "192.168.51.4"
   config.vm.network "forwarded_port", guest: 5600, host: 5600
 
