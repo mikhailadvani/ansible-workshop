@@ -2,7 +2,7 @@
   become: yes
   tasks:
     - name: Check if wget is installed
-      command: bash -c "yum info wget | grep Repo"
+      shell: yum info wget | grep Repo
       register: wget_repo
 
     - debug: var=wget_repo
