@@ -1,4 +1,4 @@
 - hosts: remote
   tasks:
-    - name: Check hostname of local machine
-      command: hostname
+    - name: Install wget
+      command: yum install wget
