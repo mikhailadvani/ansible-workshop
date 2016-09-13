@@ -1,5 +1,11 @@
 - hosts: remote
   become: yes
   tasks:
+    - name: Check if wget is installed
+      command: yum info wget | grep Repo
+      register: wget_repo
+
+    - debug: var=wget_repo
+
     - name: Install wget
       command: yum install wget -y
