@@ -1,5 +1,4 @@
-- hosts: localhost
-  connection: local
+- hosts: remote
   tasks:
     - name: Run ls on current folder
-      command: ls
+      command: hostname
