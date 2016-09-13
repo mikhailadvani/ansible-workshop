@@ -1,4 +1,5 @@
 - hosts: remote
+  become: yes
   tasks:
     - name: Install wget
       command: yum install wget
