@@ -5,4 +5,4 @@ How to run?
 
 `/opt/ansible/workspace`
 
-`[vagrant@localhost workspace]$ ansible-playbook play.yml -v`
+`[vagrant@localhost workspace]$ ansible-playbook play.yml -i remote.inventory -v`
