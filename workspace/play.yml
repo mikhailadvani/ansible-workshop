@@ -1,13 +1,5 @@
 - hosts: remote
   become: yes
   tasks:
-    - name: Check if wget is installed
-      shell: yum info wget | grep Repo
-      register: wget_repo
-
-    - set_fact:
-        wget_installed: "{{wget_repo.stdout.find('installed')}}"
-
     - name: Install wget
-      command: yum install wget -y
-      when: wget_installed == -1
+      yum: name=wget state=present
