@@ -1,4 +1,4 @@
 - hosts: remote
   tasks:
-    - name: Run ls on current folder
+    - name: Check hostname of local machine
       command: hostname
